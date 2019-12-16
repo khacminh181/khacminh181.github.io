@@ -26,184 +26,168 @@
 		<div class="reveal">
 			<div class="slides">
 					<section>
-						<h1>Error handling in PHP</h1>
+						<h1>Git and Github</h1>
 						<!-- <h3>The HTML Presentation Framework</h3> -->
 						<p>
-								<ul>
-										<li>Nguyễn Khắc Minh</li>
-										<li>Hoàng Thị Thu Uyên</li>
-								</ul>
+								Nguyễn Khắc Minh
 						</p>
 					</section>
 					<section>
-							<h2>Error handling in PHP</h2>
-							<ol>
-							<li>Tại sao cần phải xử lý ngoại lệ ?</li>
-							<li >Cách xử lý ngoại lệ trong PHP</li>
-							</ol>
+							<h1>Agenda</h1>
+							<ul>
+							<li>Repositories</li>
+							<li>Commits </li>
+							<li>Branches and Merges</li>
+							<li>Github</li>
+							</ul>
 					</section>
 
 					<section>
-						<h2>I. Tại sao cần phải xử lý lỗi ?</h2>
-						<p>- Phòng tránh những kết quả không mong muốn hiển thị trên pages của mình gây khó chịu cho người sử dụng.</p>
-						<p>- PHP exception thường được sử dụng để thay đổi luồng chạy của ứng dụng khi có bất kỳ một lỗi đã biết xuất hiện.</p>
+						<h1>Git</h1>
 					</section>
 
 					<section>
-						<h2>II. Cách xử lý lỗi trong PHP.</h2>
-						<p>Khi một lỗi xuất hiện, tùy thuộc vào việc bạn setting config, PHP hiển thị error message lên trên web browser và những thông tin liên quan đến lỗi đó.</p>
-						<p>PHP cung cấp nhiều cách để xử lý lỗi: </p>
+						<section data-background="./Image/github-images/0003.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0004.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0005.jpg" >
+						</section>
+					</section>
+
+					<section>
+						<section data-background="./Image/github-images/0006.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0007.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0008.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0009.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0010.jpg" >
+						</section>
+					</section>
+
+					<section>
+						<section data-background="./Image/github-images/0011.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0012.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0013.jpg" >
+						</section>
+					</section>
+
+					<section>
+						<section data-background="./Image/github-images/0014.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0015.jpg" >
+						</section>
+					</section>
+
+					<section>
+						<h3>What is Git?</h3>
 						<ul>
-							<li>Die statements</li>
-							<li>Custom error handlers</li>
-							<li>Exception Handling</li>
+							<li>Keeps track of changes to code. </li>
+							<li>Synchronizes code between different people. </li>
+							<li>Test changes to code without losing the original. </li>
+							<li>Revert back to old versions of code .</li>
 						</ul>
 					</section>
 
-					<section data-markdown>
-							<script type="text/template">
-								### Die statements
-								#### Sử dụng hàm die() kết hợp echo và exit(). Việc này rất hữu dụng khi ta muốn hiển thị lỗi và dừng chương trình khi lỗi xuất hiện.
-								```
-								<?php
-								if(!file_exists("/tmp/test.txt")) {
-										die("File not found");
-								}else {
-										$file = fopen("/tmp/test.txt","r");
-										print "Opend file sucessfully";
-								}
-								// Test of the code here.
-								?>
-								```
-							</script>
+					<section>
+						<section>
+							<p style="font-size: 100px">git clone</p>
+						</section>
+						<section data-background="./Image/github-images/0018.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0019.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0020.jpg" >
+						</section>
 					</section>
 
 					<section>
-							<section >
-									<h4>Custom error handlers</h4>
-									<p style="font-size: 28px" >Người dùng có thể tự tạo hàm xử lý lỗi sẽ được gọi khi lỗi xuất hiện.</p>
-									<p style="font-size: 26px" data-markdown>
-									```
-									error_function(error_level,error_message, error_file,error_line,error_context);
-									```
-									</p>
-								<table style="font-size: 18px">
-										<thead>
-											<tr>
-												<th>Tham số</th>
-												<th>Miêu tả</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>error_level</td>
-												<td>Bắt buộc - Xác định cấp độ lỗi cho lỗi tự định nghĩa (user-defined). Phải là một giá trị số</td>
-											</tr>
-											<tr>
-												<td>error_message</td>
-												<td>Bắt buộc - Xác định error message lỗi tự định nghĩa</td>
-											</tr>
-											<tr>
-												<td>error_file</td>
-												<td>Tùy ý - Xác định tên file trong đó lỗi xảy ra</td>
-											</tr>
-											<tr>
-												<td>error_line</td>
-												<td>Tùy ý - Xác định số dòng trong đó lỗi xảy ra</td>
-											</tr>
-											<tr>
-												<td>error_file</td>
-												<td>Tùy ý - Xác định một mảng chứa mọi biến và giá trị của chúng, sử dụng khi lỗi xảy ra</td>
-											</tr>
-										</tbody>
-									</table>
+						<section>
+							<p style="font-size: 100px">git add</p>
 						</section>
-						<section data-markdown>
-								<script type="text/template">
-									```
-									<?php
-										error_reporting( E_ERROR );
-										
-										function handleError($errno, $errstr,$error_file,$error_line)
-										{
-												echo "<b>Xảy ra lỗi:</b> [$errno] $errstr - $error_file:$error_line";
-												echo "<br />";
-												echo "Kết thúc PHP Script";
-												die();
-										}
-										
-										//thiết lập error handler
-										set_error_handler("handleError");
-										
-										//trigger error
-										myFunction();
-									?>
-									```
-								</script>
-							</section> 
+						<section data-background="./Image/github-images/0022.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0023.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0024.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0025.jpg" >
+						</section>
 					</section>
-
 					
 					<section>
-							<section>
-									<h4>Exception Handling</h4>
-									<p style="font-size: 30px">PHP 5 có một Exception Model tương tự như trong các ngôn ngữ lập trình khác. Exception là quan trọng và cung cấp một điều khiển tốt hơn thông qua xử lý lỗi.</p>
-									<ul style="font-size: 26px">
-										<li>Try − Một hàm sử dụng một exception nên là một khối try. Nếu exception không kích hoạt, code sẽ tiếp tục như bình thường. Tuy nhiên, nếu exception kích hoạt, một exception được "thrown".</li>
-										<li>Throw − Đây là cách bạn kích hoạt một exception. Mỗi "thrown" phải có ít nhất một "catch".</li>
-										<li>Catch − Mỗi khối "catch" thu nhận một exception và tạo một đối tượng chứa thông tin exception đó.</li>
-									</ul>
-								</section>
-								<section>
-									<p>Tại sao phải xử lý ngoại lệ ?</p>
-									<p>Sau đây là những ưu điểm chính của xử lý ngoại lệ đối với xử lý lỗi</p>		
-									<ul style="font-size: 26px">
-										<li>
-											Tách code xử lý lỗi với lỗi thông thường bằng việc sử dụng try/catch, khiến code dễ đọc hơn. 
-										</li>
-										<li>
-											Nhóm các loại lỗi cơ bản.
-										</li>
-									</ul>
-										
-								</section>
-								
-							<section data-markdown>
-								<script type="text/template">
-									```
-									<?php
-										try {
-												$error = 'Luôn luôn ném lỗi này';
-												throw new Exception($error);
-												
-												// Phần code mà theo sau một ngoại lệ sẽ không được thực thi.
-												echo 'Phần code này không bao giờ được thực thi';
-										}
-										catch (Exception $e) {
-												echo 'Bắt ngoại lệ: ',  $e->getMessage(), "\n";
-										}
-										
-										// Tiếp tục tiến trình thực thi
-										echo 'Hello World';
-									?>
-									
-									```
-								</script>
-							</section>
-			
-							<section>
-									Trong ví dụ trên, hàm <strong>$e->getMessage</strong> được sử dụng để lấy error message. Dưới đây là một số hàm có thể được sử dụng từ lớp Exception trong PHP.
-									<ul style="font-size: 26px">
-										<li>
-											getMessage() − thông báo của exception
-										</li>
-										<li>getCode() − code của exception</li>
-										<li>getFile() − tên source file</li>
-										<li>getLine() − source line</li>
-										<li>getTrace() − n mảng của backtrace()</li>
-										<li>getTraceAsString() − chuỗi được định dạng của trace</li>
-									</ul>
-							</section>
+						<section>
+							<p style="font-size: 100px">git commit</p>
+						</section>
+						<section data-background="./Image/github-images/0027.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0028.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0029.jpg" >
+						</section>
+					</section>
+	
+					<section>
+						<section>
+							<p style="font-size: 100px">git status</p>
+						</section>
+						<section data-background="./Image/github-images/0031.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0032.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0033.jpg" >
+						</section>
+					</section>
+
+					<section>
+						<section>
+							<p style="font-size: 100px">git push</p>
+						</section>
+						<section data-background="./Image/github-images/0035.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0036.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0037.jpg" >
+						</section>
+					</section>
+
+					<section>
+						<section>
+							<p style="font-size: 100px">git pull</p>
+						</section>
+						<section data-background="./Image/github-images/0039.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0040.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0041.jpg" >
+						</section>
+					</section>
+
+					<section>
+						<section>
+							<p style="font-size: 100px">Merge Conflicts</p>
+						</section>
+						<section data-background="./Image/github-images/0043.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0044.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0045.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0046.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0047.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0048.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0049.jpg" >
+						</section>
+						<section data-background="./Image/github-images/0050.jpg" >
+						</section>
 					</section>
 
 			</div>
@@ -216,11 +200,21 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				// other options...
+
+				multiplex: {
+					// Example values. To generate your own, see the socket.io server instructions.
+					secret: null, // null so the clients do not have control of the master presentation
+					id: '1ea875674b17ca76', // id, obtained from socket.io server
+					url: 'https://reveal-js-multiplex-ccjbegmaii.now.sh' // Location of socket.io server
+				},
+
+				// Don't forget to add the dependencies
 				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
+					{ src: '//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js', async: true },
+					{ src: 'plugin/multiplex/client.js', async: true }
+
+					// other dependencies...
 				]
 			});
 		</script>
